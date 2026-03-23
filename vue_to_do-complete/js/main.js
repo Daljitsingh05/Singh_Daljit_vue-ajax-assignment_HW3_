@@ -3,8 +3,11 @@ import { createApp } from 'vue';
 const app = createApp({
     data() {
         return {
-            newTask: "", //This is where we will bind data from our input.
-            taskList: [] //This is an array where our tasks will be stored.
+           item:[]
+           selectedItem : null,
+           loading:false,
+           error:""
+           
         };
     },
     methods: {
