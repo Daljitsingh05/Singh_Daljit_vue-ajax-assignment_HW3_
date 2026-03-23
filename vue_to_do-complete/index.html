@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <title>Vue</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato%7CRaleway" rel="stylesheet">
+    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script type="importmap">
+        {
+            "imports": {
+                "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+            }
+        }
+    </script>
+    <!-- For reference this is the production build file -->
+    <!-- <script type="importmap">
+        {
+            "imports": {
+                "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.prod.js"
+            }
+        }
+    </script> -->
+    <script type="module" src="js/main.js"></script>
+</head>
+
+<body>
+<div class="grid-con">
+    <div id="app" class="col-span-full m-col-start-3 m-col-end-11">
+        <section class="panel">
+            <!-- Binding what the user types into newTask, using v-model, call addTask method
+            when user types enter by using the v-on directive -->
+            <input type="text" placeholder="Add a Task" class="text-input" v-model="newTask" v-on:keyup.enter="addTask()">
+            <button v-on:click="clearList()">Clear List</button> 
+            <button v-on:click="addTask()">Add Task</button> 
+        </section> 
+        <!-- Unorderd list for holding our todo items -->
+        <ul class="list">   
+        <!-- If task.checked returns true, the done class is enabled on the li element and vice versa. -->
+            <li v-for="task in taskList" v-bind:class="{done: task.checked}">  
+              <input type="checkbox" class="checkbox" v-model="task.checked">    
+              <label for="checkbox">{{task.text}}</label>
+              <button class="delete" v-on:click="removeTask(task)">X</button>   
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
