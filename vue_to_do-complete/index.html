@@ -32,8 +32,7 @@
             <!-- Binding what the user types into newTask, using v-model, call addTask method
             when user types enter by using the v-on directive -->
             <input type="text" placeholder="Add a Task" class="text-input" v-model="newTask" v-on:keyup.enter="addTask()">
-            <button v-on:click="clearList()">Clear List</button> 
-            <button v-on:click="addTask()">Add Task</button> 
+            
         </section> 
         <!-- Unorderd list for holding our todo items -->
         <ul class="list">   
