@@ -11,6 +11,9 @@ const app = createApp({
         };
     },
     methods: {
+        selectedItem(item){
+            this.selectedItem = item;
+        }
        
     }
 }).mount('#app');
