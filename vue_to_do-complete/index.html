@@ -42,6 +42,10 @@
                     {{item.title}}
                 </li>
             </ul>
+            <div v-if="selectedItem" class="details">
+                <h2> {{ selectedItem.title }}</h2>
+                <p> {{ selectedItem.description }}</p>
+            </div>
         </ul>
     </div>
 </div>
